@@ -11,13 +11,17 @@ public class DrawFrame extends JFrame {
 		setVisible(true);
 		setSize(SIZE+20, SIZE-20);
 
-		//TODO Create a triangle
+		//TODO Create a triangle		
 		//TODO Create a DecoratedTriangle with the triangle from above inside
-		for(int i=0; i<5; i++) {
+		
+		DecoratedTriangle dt = new DecoratedTriangle(new Triangle(SIZE));
+		
+		for(int i=0; i<2; i++) {
 			//TODO assign to the triangle as new triangle inside the original decoratedtriangle
+			dt = new DecoratedTriangle(dt);
 		}
 		
-		JPanel panel = new DrawPanel(t);//TODO put the decorated triangle here
+		JPanel panel = new DrawPanel(dt);//TODO put the decorated triangle here
 		this.getContentPane().add(panel);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
